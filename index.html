@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSE 460 | Software Analysis & Design Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <header>
+    <nav>
+      <a class="logo" href="#top">
+        <span class="logo-bracket">{</span> CSE 460 <span class="logo-bracket">}</span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#repo">Repository</a>
+        <a href="#project">Project</a>
+        <a href="#artifacts">Artifacts</a>
+        <a href="#timeline">Timeline</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">&#9776;</button>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text fade-in">
+        <span class="badge">ASU · Summer 2026 · Session C</span>
+        <h1>Software<br><em>Analysis</em> &<br>Design</h1>
+        <p class="hero-sub">
+          A living portfolio documenting object-oriented analysis, UML modeling,
+          design patterns, and software architecture across a full semester.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#repo">Browse Work</a>
+          <a class="btn ghost" href="https://github.com/YOUR-USERNAME/YOUR-REPO" target="_blank">
+            GitHub ↗
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-card fade-in delay-1">
+        <div class="hero-card-label">Course at a Glance</div>
+        <ul class="checklist">
+          <li>Object-oriented principles &amp; design</li>
+          <li>Advanced UML specifications</li>
+          <li>Design patterns in Java</li>
+          <li>Software architecture styles</li>
+          <li>AI/ML in software engineering</li>
+          <li>Quality attributes &amp; documentation</li>
+        </ul>
+        <div class="meta-row">
+          <span class="meta-chip">CSE 460 · 3 Credits</span>
+          <span class="meta-chip">Dr. Balasooriya</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="container fade-in">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Overview</h2>
+      </div>
+      <p class="section-intro">
+        This portfolio captures not just code, but the full design journey — requirements,
+        diagrams, tradeoffs, and implementation decisions — to demonstrate engineering
+        thinking to future collaborators and recruiters.
+      </p>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-icon">◈</div>
+          <h3>Analysis</h3>
+          <p>Requirements gathering, use cases, domain modeling, and identifying system responsibilities through structured UML.</p>
+        </article>
+        <article class="card accent">
+          <div class="card-icon">⬡</div>
+          <h3>Design</h3>
+          <p>Class diagrams, sequence diagrams, design patterns, and architecture decisions documented with rationale.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">◇</div>
+          <h3>Implementation</h3>
+          <p>Clean Java code, test coverage, iteration notes, and lessons learned from building production-grade software.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- REPO BROWSER -->
+    <section id="repo" class="container fade-in">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Repository Browser</h2>
+      </div>
+      <p class="section-intro">A guided map through the repository structure. Each entry links to the relevant folder or file once published.</p>
+
+      <div class="repo-browser">
+        <div class="repo-topbar">
+          <div class="repo-name">
+            <span class="repo-dot"></span>
+            <code>cse460-software-analysis-design</code>
+          </div>
+          <input id="searchInput" class="search" type="search" placeholder="Filter sections…" aria-label="Filter repository sections" />
+        </div>
+        <ul id="fileList" class="file-list" role="list"></ul>
+        <div id="noResults" class="no-results" style="display:none;">No matching sections found.</div>
+      </div>
+    </section>
+
+    <!-- PROJECT -->
+    <section id="project" class="container fade-in">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Class Project</h2>
+      </div>
+      <p class="section-intro">
+        The semester project spans multiple deliverables — from initial design documents to final implementation.
+        It will become the centerpiece of this portfolio.
+      </p>
+
+      <div class="project-card">
+        <div class="project-status">
+          <span class="pulse"></span> In Progress · Details announced on Canvas
+        </div>
+        <h3 class="project-title">Project Placeholder</h3>
+        <p>Replace this with your actual project title and summary once announced. This card will include the problem statement, your design approach, and links to all deliverables.</p>
+        <div class="tag-row">
+          <span class="tag">Java</span>
+          <span class="tag">UML</span>
+          <span class="tag">Design Patterns</span>
+          <span class="tag">Architecture Docs</span>
+          <span class="tag">Testing</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Design Doc ↗</a>
+          <a href="#" class="project-link">Source Code ↗</a>
+          <a href="#" class="project-link">UML Diagrams ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTIFACTS -->
+    <section id="artifacts" class="container fade-in">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Engineering Artifacts</h2>
+      </div>
+      <p class="section-intro">Core deliverables that demonstrate engineering craft beyond just code.</p>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>UML Diagrams</h3>
+          <p>Class, sequence, state machine, use case, collaboration, and object diagrams built across assignments and the project.</p>
+        </article>
+        <article class="card accent">
+          <h3>Architecture Docs</h3>
+          <p>High-level system views, component responsibilities, and architectural style comparisons with trade-off analysis.</p>
+        </article>
+        <article class="card">
+          <h3>Design Pattern Notes</h3>
+          <p>Pattern implementations with explanations of the problem context, solution structure, and consequences.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="container fade-in">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Course Timeline</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item active">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <span class="t-phase">Phase 1</span>
+            <h3>Setup &amp; Structure</h3>
+            <p>Initialize repo, deploy website via Netlify, write README, define folder structure.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <span class="t-phase">Phase 2</span>
+            <h3>Homeworks &amp; Quizzes</h3>
+            <p>Add assignment summaries, diagrams, and reflections as they are completed throughout the semester.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <span class="t-phase">Phase 3</span>
+            <h3>Midterm &amp; Exam 1</h3>
+            <p>Document key concepts covered, add notes and diagrams studied for Exam 1.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <span class="t-phase">Phase 4</span>
+            <h3>Final Project</h3>
+            <p>Publish all project deliverables — design documents, UML diagrams, architecture docs, and source code.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <span class="t-phase">Phase 5</span>
+            <h3>Portfolio Polish</h3>
+            <p>Make repo public, refine write-ups, add recruiter-facing README, pin on GitHub profile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="logo-bracket">{</span> CSE 460 <span class="logo-bracket">}</span>
+      <p>Software Analysis &amp; Design · Arizona State University · Summer 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
