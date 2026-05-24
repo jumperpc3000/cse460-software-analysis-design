@@ -59,8 +59,8 @@ const books = [
     amazonUrl: "https://www.amazon.com/Object-Oriented-Analysis-Design-Applications-3rd/dp/020189551X/ref=sr_1_1?crid=2H3T5KI3Z9IY&dib=eyJ2IjoiMSJ9.83KIMOv3Cc7fNsb2DrYKHWITcJJXguFbejKHryUmxoJu2shw5sokosi6OFvOdbj4n8zZDrOL7-q_rjoUWrJOdLoIrY5p5DohxeKQR_WrZTb3ZdlagrDKD5JNwzM5nBQ-OGSc47AC9qSM16VCs6UZz6iq15kTAOj8sI13D_DlGBS2k3TBdVPn0ZDlSEm1qewk8jal6nHK90HnScT8RgSXceJlbFVrXE-REEobL91EvRU.ueRd2j_9H3TzHHmwETo_cgYJuJlDM74w7UMyysbt2Tg&dib_tag=se&keywords=Object-Oriented+Analysis+and+Design+with+Applications&qid=1779637815&s=books&sprefix=object-oriented+analysis+and+design+with+applications%2Cstripbooks%2C185&sr=1-1",
     color: "teal",
     chapters: [
-      { num: 1,  title: "Complexity",                        pdf: "notes/ooad/ch01-complexity.pdf",         status: "wip" },
-      { num: 2,  title: "The Object Model",                  pdf: "notes/ooad/ch02-object-model.pdf",       status: "planned" },
+      { num: 1,  title: "Complexity",                        pdf: "notes/ooad/ch01-complexity.pdf",         status: "done" },
+      { num: 2,  title: "The Object Model",                  pdf: "notes/ooad/ch02-object-model.pdf",       status: "done" },
       { num: 3,  title: "Classes and Objects",               pdf: "notes/ooad/ch03-classes-objects.pdf",    status: "planned" },
       { num: 4,  title: "Classification",                    pdf: "notes/ooad/ch04-classification.pdf",    status: "planned" },
       { num: 5,  title: "Notation",                          pdf: "notes/ooad/ch05-notation.pdf",           status: "planned" },
