@@ -86,6 +86,16 @@ const assignments = [
     ],
     // Mermaid diagram source - rendered live in browser
     diagram: `classDiagram
+class Person {
+    <<abstract>>
+    #String name
+    #int age
+    +getDescription() String
+}
+class Gradable {
+    <<interface>>
+    +calculateGrade() double
+}
 class Student {
     +String name
     +String studentID
@@ -107,15 +117,6 @@ class Course {
     +removeStudent() boolean
     +getAvailableSeats() int
 }
-class Person {
-    #String name
-    #int age
-    +getDescription()* String
-}
-class Gradable {
-    <<interface>>
-    +calculateGrade()* double
-}
 class Department {
     +String departmentName
     +String departmentCode
@@ -123,10 +124,10 @@ class Department {
     +addCourse() void
     +removeCourse() void
 }
-Course "*" -- "*" Student : enrolls in
-Course "*" --* "1" Department : composition
+Student --|> Person : extends
 Student ..|> Gradable : implements
-Student --|> Person : extends`
+Course "*" -- "*" Student : enrolls in
+Department "1" *-- "*" Course : composition`
   }
 ];
 
