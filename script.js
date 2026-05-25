@@ -76,7 +76,7 @@ const assignments = [
       { num: "P3", title: "Astah Plugins",                     pts: 20, desc: "Installed and reviewed the Astah Mermaid Plugin. Exported class diagrams as Mermaid text and verified rendering in GitHub." },
     ],
     deliverables: [
-      { label: "Write-up PDF",        icon: "📄", url: "Assignments/HW1/AlsulaimanF_HW1.pdf",                                                                              type: "pdf" },
+      { label: "Write-up PDF",        icon: "📄", url: "Assignments/HW1/AlsulaimanF%23HW1.pdf",                                                                           type: "pdf" },
       { label: "Mermaid Diagram",     icon: "◈",  url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Class%20Diagram%20Problem%201_2.md", type: "github" },
       { label: "Course.java",         icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20Java/Course.java",     type: "github" },
       { label: "Student.java",        icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20Java/Student.java",    type: "github" },
@@ -110,11 +110,11 @@ class Course {
 class Person {
     #String name
     #int age
-    +getDescription() String*
+    +getDescription()* String
 }
 class Gradable {
     <<interface>>
-    +calculateGrade() double*
+    +calculateGrade()* double
 }
 class Department {
     +String departmentName
@@ -126,7 +126,7 @@ class Department {
 Course "*" -- "*" Student : enrolls in
 Course "*" --* "1" Department : composition
 Student ..|> Gradable : implements
-Person --|> Student : extends`
+Student --|> Person : extends`
   }
 ];
 
@@ -145,7 +145,6 @@ function renderAssignments() {
           </div>
         </div>
         <div class="hw-header-right">
-          <span class="hw-score">${hw.score}</span>
           <span class="hw-status status-${hw.status}">${statusLabel[hw.status]}</span>
           <button class="hw-toggle" onclick="toggleHW('${hw.id}')" aria-label="Toggle details">
             <span id="toggle-icon-${hw.id}">▼</span>
@@ -169,7 +168,6 @@ function renderAssignments() {
                 <span class="problem-title">${p.title}</span>
                 <span class="problem-desc">${p.desc}</span>
               </div>
-              <span class="problem-pts">${p.pts} pts</span>
             </div>
           `).join('')}
         </div>
