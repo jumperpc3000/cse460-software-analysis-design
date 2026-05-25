@@ -22,7 +22,6 @@
         <a href="#repo">Repository</a>
         <a href="#project">Project</a>
         <a href="#artifacts">Artifacts</a>
-        <a href="#assignments">Assignments</a>
         <a href="#notes">Notes</a>
         <a href="#timeline">Timeline</a>
       </div>
@@ -42,12 +41,13 @@
           design patterns, and software architecture across a full semester.
         </p>
         <div class="actions">
-          <a class="btn primary" href="#assignments">Browse Work</a>
+          <a class="btn primary" href="#repo">Browse Work</a>
           <a class="btn ghost" href="https://github.com/jumperpc3000/cse460-software-analysis-design" target="_blank">
             GitHub ↗
           </a>
         </div>
       </div>
+
       <aside class="hero-card fade-in delay-1">
         <div class="hero-card-label">Course at a Glance</div>
         <ul class="checklist">
@@ -101,7 +101,7 @@
         <span class="section-num">02</span>
         <h2>Repository Browser</h2>
       </div>
-      <p class="section-intro">A guided map through the repository structure.</p>
+      <p class="section-intro">A guided map through the repository structure. Each entry links to the relevant folder or file once published.</p>
       <div class="repo-browser">
         <div class="repo-topbar">
           <div class="repo-name">
@@ -123,13 +123,14 @@
       </div>
       <p class="section-intro">
         The semester project spans multiple deliverables — from initial design documents to final implementation.
+        It will become the centerpiece of this portfolio.
       </p>
       <div class="project-card">
         <div class="project-status">
           <span class="pulse"></span> In Progress · Details announced on Canvas
         </div>
         <h3 class="project-title">Project Placeholder</h3>
-        <p>Replace this with your actual project title and summary once announced.</p>
+        <p>Replace this with your actual project title and summary once announced. This card will include the problem statement, your design approach, and links to all deliverables.</p>
         <div class="tag-row">
           <span class="tag">Java</span>
           <span class="tag">UML</span>
@@ -168,36 +169,26 @@
       </div>
     </section>
 
-    <!-- ASSIGNMENTS -->
-    <section id="assignments" class="container fade-in">
-      <div class="section-header">
-        <span class="section-num">05</span>
-        <h2>Assignments</h2>
-      </div>
-      <p class="section-intro">
-        Homework submissions showcasing applied OOP design, UML modeling, and software tooling.
-        Each entry includes the write-up, diagrams, and exported source files.
-      </p>
-      <div id="assignmentsContainer" class="assignments-list"></div>
-    </section>
-
     <!-- NOTES & REFERENCES -->
     <section id="notes" class="container fade-in">
       <div class="section-header">
-        <span class="section-num">06</span>
+        <span class="section-num">05</span>
         <h2>Notes &amp; References</h2>
       </div>
       <p class="section-intro">
         Chapter-by-chapter study notes compiled from course textbooks. Notes are my own
-        summaries and interpretations. Full credit and attribution to the original authors.
+        summaries and interpretations. Full credit and attribution to the original authors — links
+        to each book are provided below.
       </p>
+
+      <!-- BOOKS GRID -->
       <div id="booksContainer" class="books-grid"></div>
     </section>
 
     <!-- TIMELINE -->
     <section id="timeline" class="container fade-in">
       <div class="section-header">
-        <span class="section-num">07</span>
+        <span class="section-num">06</span>
         <h2>Course Timeline</h2>
       </div>
       <div class="timeline">
@@ -206,15 +197,15 @@
           <div class="t-content">
             <span class="t-phase">Phase 1</span>
             <h3>Setup &amp; Structure</h3>
-            <p>Initialize repo, deploy via GitHub Pages, write README, define folder structure.</p>
+            <p>Initialize repo, deploy website via GitHub Pages, write README, define folder structure.</p>
           </div>
         </div>
-        <div class="timeline-item active">
+        <div class="timeline-item">
           <div class="t-dot"></div>
           <div class="t-content">
             <span class="t-phase">Phase 2</span>
             <h3>Homeworks &amp; Quizzes</h3>
-            <p>HW1 complete — Astah, UML class diagrams, OOP design, plugin usage.</p>
+            <p>Add assignment summaries, diagrams, and reflections as they are completed throughout the semester.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -254,8 +245,6 @@
     </div>
   </footer>
 
-  <!-- Mermaid.js for live diagram rendering -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
