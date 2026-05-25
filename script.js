@@ -69,7 +69,7 @@ const assignments = [
     status: "done",
     score: "60 / 60",
     skills: ["Astah", "UML Class Diagrams", "OOP Design", "Java Export", "Mermaid", "Plugin Usage"],
-    summary: "Installed and configured Astah Professional. Built UML class diagrams from scratch covering basic and advanced OOP relationships including inheritance, interface implementation, association, and composition. Exported diagrams to Java source code and Mermaid format using the Astah Mermaid Plugin.",
+    summary: "Installed and configured Astah UML. Built UML class diagrams from scratch covering basic and advanced OOP relationships including inheritance, interface implementation, association, and composition. Exported diagrams to Java source code and Mermaid format using the Astah Mermaid Plugin.",
     problems: [
       { num: "P1", title: "Astah Setup & Basic Class Diagram", pts: 20, desc: "Created Student and Course classes with a many-to-many association in Astah." },
       { num: "P2", title: "Advanced Class Relationships",       pts: 20, desc: "Extended diagram with Person (abstract), Gradable (interface), and Department. Demonstrated inheritance, implementation, and composition. Exported to Java and Mermaid." },
@@ -78,11 +78,11 @@ const assignments = [
     deliverables: [
       { label: "Write-up PDF",        icon: "📄", url: "Assignments/HW1/AlsulaimanF%23HW1.pdf",                                                                           type: "pdf" },
       { label: "Mermaid Diagram",     icon: "◈",  url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Class%20Diagram%20Problem%201_2.md", type: "github" },
-      { label: "Course.java",         icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20Java/Course.java",     type: "github" },
-      { label: "Student.java",        icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20Java/Student.java",    type: "github" },
-      { label: "Person.java",         icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20Java/Person.java",     type: "github" },
-      { label: "Department.java",     icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20Java/Department.java", type: "github" },
-      { label: "Gradable.java",       icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20Java/Gradable.java",   type: "github" },
+      { label: "Course.java",         icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Course.java",     type: "github" },
+      { label: "Student.java",        icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Student.java",    type: "github" },
+      { label: "Person.java",         icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Person.java",     type: "github" },
+      { label: "Department.java",     icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Department.java", type: "github" },
+      { label: "Gradable.java",       icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Gradable.java",   type: "github" },
     ],
     // Mermaid diagram source - rendered live in browser
     diagram: `classDiagram
