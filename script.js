@@ -84,50 +84,7 @@ const assignments = [
       { label: "Department.java",     icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Department.java", type: "github" },
       { label: "Gradable.java",       icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Gradable.java",   type: "github" },
     ],
-    // Mermaid diagram source - rendered live in browser
-    diagram: `classDiagram
-class Person {
-    <<abstract>>
-    #String name
-    #int age
-    +getDescription() String
-}
-class Gradable {
-    <<interface>>
-    +calculateGrade() double
-}
-class Student {
-    +String name
-    +String studentID
-    -double gpa
-    -ArrayList~String~ enrolledCourses
-    +enrollInCourse() void
-    +calculateGPA() double
-    +dropCourse() void
-    +getDescription() String
-    +calculateGrade() double
-}
-class Course {
-    +String courseID
-    +String courseName
-    -String instructor
-    -int maxCapacity
-    -ArrayList~String~ enrolledStudents
-    +addStudent() boolean
-    +removeStudent() boolean
-    +getAvailableSeats() int
-}
-class Department {
-    +String departmentName
-    +String departmentCode
-    -ArrayList~Course~ courses
-    +addCourse() void
-    +removeCourse() void
-}
-Student --|> Person : extends
-Student ..|> Gradable : implements
-Course "*" -- "*" Student : enrolls in
-Department "1" *-- "*" Course : composition`
+    // diagram intentionally omitted — view via Mermaid Diagram link above
   }
 ];
 
