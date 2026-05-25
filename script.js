@@ -83,8 +83,7 @@ const assignments = [
       { label: "Person.java",         icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Person.java",     type: "github" },
       { label: "Department.java",     icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Department.java", type: "github" },
       { label: "Gradable.java",       icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Gradable.java",   type: "github" },
-    ],
-    // diagram intentionally omitted — view via Mermaid Diagram link above
+    ]
   }
 ];
 
