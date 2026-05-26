@@ -1,22 +1,3 @@
-// ── MERMAID INIT ─────────────────────────────────────────────
-mermaid.initialize({
-  startOnLoad: false,
-  theme: 'dark',
-  themeVariables: {
-    background: '#131d30',
-    primaryColor: '#0f2744',
-    primaryTextColor: '#e8eaf0',
-    primaryBorderColor: '#5eead4',
-    lineColor: '#5eead4',
-    secondaryColor: '#1e3a5f',
-    tertiaryColor: '#0a0f1e',
-    edgeLabelBackground: '#131d30',
-    clusterBkg: '#0f172a',
-    titleColor: '#5eead4',
-    fontFamily: 'DM Mono, monospace',
-  }
-});
-
 // ── REPO FILES ───────────────────────────────────────────────
 const repoFiles = [
   { path: "README.md",                              desc: "Portfolio overview, skills demonstrated, and recruiter-facing summary",  status: "done" },
@@ -67,13 +48,12 @@ const assignments = [
     number: "HW1",
     title: "Exploring Astah and its Features",
     status: "done",
-    score: "60 / 60",
     skills: ["Astah", "UML Class Diagrams", "OOP Design", "Java Export", "Mermaid", "Plugin Usage"],
     summary: "Installed and configured Astah UML. Built UML class diagrams from scratch covering basic and advanced OOP relationships including inheritance, interface implementation, association, and composition. Exported diagrams to Java source code and Mermaid format using the Astah Mermaid Plugin.",
     problems: [
-      { num: "P1", title: "Astah Setup & Basic Class Diagram", pts: 20, desc: "Created Student and Course classes with a many-to-many association in Astah." },
-      { num: "P2", title: "Advanced Class Relationships",       pts: 20, desc: "Extended diagram with Person (abstract), Gradable (interface), and Department. Demonstrated inheritance, implementation, and composition. Exported to Java and Mermaid." },
-      { num: "P3", title: "Astah Plugins",                     pts: 20, desc: "Installed and reviewed the Astah Mermaid Plugin. Exported class diagrams as Mermaid text and verified rendering in GitHub." },
+      { num: "P1", title: "Astah Setup & Basic Class Diagram", desc: "Created Student and Course classes with a many-to-many association in Astah." },
+      { num: "P2", title: "Advanced Class Relationships",      desc: "Extended diagram with Person (abstract), Gradable (interface), and Department. Demonstrated inheritance, implementation, and composition. Exported to Java and Mermaid." },
+      { num: "P3", title: "Astah Plugins",                    desc: "Installed and reviewed the Astah Mermaid Plugin. Exported class diagrams as Mermaid text and verified rendering in GitHub." },
     ],
     deliverables: [
       { label: "Write-up PDF",        icon: "📄", url: "Assignments/HW1/AlsulaimanF%23HW1.pdf",                                                                           type: "pdf" },
@@ -129,15 +109,6 @@ function renderAssignments() {
           `).join('')}
         </div>
 
-        <!-- Live Mermaid Diagram -->
-        ${hw.diagram ? `
-        <div class="hw-diagram-section">
-          <div class="hw-sub-label">Live Class Diagram <span class="diagram-source-note">rendered from Mermaid export</span></div>
-          <div class="mermaid-wrapper">
-            <div class="mermaid" id="mermaid-${hw.id}">${hw.diagram}</div>
-          </div>
-        </div>` : ''}
-
         <!-- Deliverables -->
         <div class="hw-deliverables">
           <div class="hw-sub-label">Deliverables</div>
@@ -156,8 +127,6 @@ function renderAssignments() {
     </div>
   `).join('');
 
-  // Render all mermaid diagrams
-  mermaid.run({ querySelector: '.mermaid' });
 }
 
 function toggleHW(id) {
