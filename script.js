@@ -67,13 +67,12 @@ const assignments = [
     number: "HW1",
     title: "Exploring Astah and its Features",
     status: "done",
-    score: "60 / 60",
     skills: ["Astah", "UML Class Diagrams", "OOP Design", "Java Export", "Mermaid", "Plugin Usage"],
     summary: "Installed and configured Astah UML. Built UML class diagrams from scratch covering basic and advanced OOP relationships including inheritance, interface implementation, association, and composition. Exported diagrams to Java source code and Mermaid format using the Astah Mermaid Plugin.",
     problems: [
-      { num: "P1", title: "Astah Setup & Basic Class Diagram", pts: 20, desc: "Created Student and Course classes with a many-to-many association in Astah." },
-      { num: "P2", title: "Advanced Class Relationships",       pts: 20, desc: "Extended diagram with Person (abstract), Gradable (interface), and Department. Demonstrated inheritance, implementation, and composition. Exported to Java and Mermaid." },
-      { num: "P3", title: "Astah Plugins",                     pts: 20, desc: "Installed and reviewed the Astah Mermaid Plugin. Exported class diagrams as Mermaid text and verified rendering in GitHub." },
+      { num: "P1", title: "Astah Setup & Basic Class Diagram", desc: "Created Student and Course classes with a many-to-many association in Astah." },
+      { num: "P2", title: "Advanced Class Relationships", desc: "Extended diagram with Person (abstract), Gradable (interface), and Department. Demonstrated inheritance, implementation, and composition. Exported to Java and Mermaid." },
+      { num: "P3", title: "Astah Plugins", desc: "Installed and reviewed the Astah Mermaid Plugin. Exported class diagrams as Mermaid text and verified rendering in GitHub." },
     ],
     deliverables: [
       { label: "Write-up PDF",        icon: "📄", url: "Assignments/HW1/AlsulaimanF%23HW1.pdf",                                                                           type: "pdf" },
