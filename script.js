@@ -82,7 +82,7 @@ const assignments = [
     deliverables: [
       { label: "Write-up PDF",    icon: "📄", url: "Assignments/HW2/AlsulaimanF_HW2.pdf",                                                                                         type: "pdf"     },
       { label: "Source Code",     icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/tree/main/Assignments/HW2/HeartHealthImagingSystem/src",                                                                                                  type: "github"  },
-      { label: "Demo Video",      icon: "▶",  url: "https://asu.zoom.us/rec/share/48etXgGKyy4NSEb8YIXB7PvD_p1x8tp2v8Xlewhde41QS3pGlq2wn0oVtEJY1uYl.NTFs2VwHw2kWu_EX%20Passcode:%20m%5E2Wn1GG",                                                                                                   type: "github"  },
+      { label: "Demo Video",      icon: "▶",  url: "https://asu.zoom.us/rec/share/1QsCxLYSdcb4WBvU6xDsbhiIWnK3uIGY6tdskKxIWbIvQpU5B5xBJQaw7auGo42Y.ggwMa-QIWx-9ml8o",       type: "github"  },
       { label: "Class Diagram",   icon: "◈",  url: "Assignments/HW2/HW2%20Implementation%20Class%20Diagram.png",                                                                    type: "diagram" },
     ]
   }
@@ -134,18 +134,26 @@ function renderAssignments() {
         <div class="hw-deliverables">
           <div class="hw-sub-label">Deliverables</div>
           <div class="deliverables-grid">
-            ${hw.deliverables.map(d => d.type === 'diagram'
-              ? `<button onclick="openDiagram('${d.url}')" class="deliverable-chip deliverable-diagram">
-                   <span class="deliverable-icon">${d.icon}</span>
-                   <span class="deliverable-label">${d.label}</span>
-                   <span class="deliverable-arrow">⤢</span>
-                 </button>`
-              : `<a href="${d.url}" target="_blank" rel="noopener noreferrer" class="deliverable-chip deliverable-${d.type}">
-                   <span class="deliverable-icon">${d.icon}</span>
-                   <span class="deliverable-label">${d.label}</span>
-                   <span class="deliverable-arrow">↗</span>
-                 </a>`
-            ).join('')}
+            ${hw.deliverables.map(d => {
+              if (d.type === 'diagram') return `
+                <button onclick="openDiagram('${d.url}')" class="deliverable-chip deliverable-diagram">
+                  <span class="deliverable-icon">${d.icon}</span>
+                  <span class="deliverable-label">${d.label}</span>
+                  <span class="deliverable-arrow">⤢</span>
+                </button>`;
+              if (d.type === 'passcode') return `
+                <button onclick="copyPasscode('${d.url}', this)" class="deliverable-chip deliverable-passcode" title="Click to copy passcode">
+                  <span class="deliverable-icon">${d.icon}</span>
+                  <span class="deliverable-label">${d.label}: ${d.url}</span>
+                  <span class="deliverable-arrow">⎘</span>
+                </button>`;
+              return `
+                <a href="${d.url}" target="_blank" rel="noopener noreferrer" class="deliverable-chip deliverable-${d.type}">
+                  <span class="deliverable-icon">${d.icon}</span>
+                  <span class="deliverable-label">${d.label}</span>
+                  <span class="deliverable-arrow">↗</span>
+                </a>`;
+            }).join('')}
           </div>
         </div>
 
@@ -153,6 +161,16 @@ function renderAssignments() {
     </div>
   `).join('');
 
+}
+
+function copyPasscode(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const label = btn.querySelector('.deliverable-label');
+    const orig  = label.textContent;
+    label.textContent = 'Copied!';
+    btn.classList.add('passcode-copied');
+    setTimeout(() => { label.textContent = orig; btn.classList.remove('passcode-copied'); }, 1800);
+  });
 }
 
 function toggleHW(id) {

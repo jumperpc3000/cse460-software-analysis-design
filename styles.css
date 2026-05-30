@@ -1050,6 +1050,20 @@ footer {
 }
 .deliverable-diagram:hover { background: rgba(167,139,250,0.14); border-color: rgba(167,139,250,0.45); transform: translateY(-1px); }
 
+/* Passcode chip — slate/grey, copy-to-clipboard */
+.deliverable-passcode {
+  border-color: rgba(148,163,184,0.25);
+  color: #94a3b8;
+  background: rgba(148,163,184,0.06);
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+}
+.deliverable-passcode:hover { background: rgba(148,163,184,0.12); border-color: rgba(148,163,184,0.4); transform: translateY(-1px); }
+.passcode-copied { background: rgba(52,211,153,0.12) !important; border-color: rgba(52,211,153,0.4) !important; color: #34d399 !important; }
+
 /* ── Diagram lightbox ─────────────────────────────────────── */
 .diagram-modal {
   display: none;
