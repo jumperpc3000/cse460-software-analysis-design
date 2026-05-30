@@ -163,13 +163,15 @@ function toggleHW(id) {
   icon.textContent = isOpen ? '▼' : '▲';
 }
 
-// Open HW1 by default on load
+// Open all assignments by default on load
 window.addEventListener('load', () => {
   renderAssignments();
   setTimeout(() => {
-    const body = document.getElementById('hw-body-hw1');
-    const icon = document.getElementById('toggle-icon-hw1');
-    if (body) { body.classList.add('open'); icon.textContent = '▲'; }
+    assignments.forEach(hw => {
+      const body = document.getElementById(`hw-body-${hw.id}`);
+      const icon = document.getElementById(`toggle-icon-${hw.id}`);
+      if (body) { body.classList.add('open'); icon.textContent = '▲'; }
+    });
   }, 100);
 });
 
