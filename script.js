@@ -81,8 +81,8 @@ const assignments = [
     ],
     deliverables: [
       { label: "Write-up PDF",    icon: "📄", url: "Assignments/HW2/AlsulaimanF_HW2.pdf",                                                                                         type: "pdf"     },
-      { label: "Source Code",     icon: "☕", url: "PLACEHOLDER_GITHUB_REPO_LINK",                                                                                                  type: "github"  },
-      { label: "Demo Video",      icon: "▶",  url: "PLACEHOLDER_DEMO_VIDEO_LINK",                                                                                                   type: "github"  },
+      { label: "Source Code",     icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/tree/main/Assignments/HW2/HeartHealthImagingSystem/src",                                                                                                  type: "github"  },
+      { label: "Demo Video",      icon: "▶",  url: "https://asu.zoom.us/rec/share/48etXgGKyy4NSEb8YIXB7PvD_p1x8tp2v8Xlewhde41QS3pGlq2wn0oVtEJY1uYl.NTFs2VwHw2kWu_EX%20Passcode:%20m%5E2Wn1GG",                                                                                                   type: "github"  },
       { label: "Class Diagram",   icon: "◈",  url: "Assignments/HW2/HW2%20Implementation%20Class%20Diagram.png",                                                                    type: "diagram" },
     ]
   }
