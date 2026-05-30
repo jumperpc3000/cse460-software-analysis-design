@@ -4,7 +4,9 @@ const repoFiles = [
   { path: "Assignments/HW1/AlsulaimanF_HW1.pdf",   desc: "HW1 write-up — Astah setup, class diagrams, plugin review",              status: "done" },
   { path: "Assignments/HW1/Class_Diagram_Problem_1_2.md", desc: "Mermaid class diagram exported from Astah",                       status: "done" },
   { path: "Assignments/HW1/Exported Astah Java/",  desc: "Java source files exported from Astah (Course, Student, Person, etc.)",  status: "done" },
-  { path: "Assignments/HW2/",                       desc: "Homework 2 — UML diagram specifications and modeling",                   status: "planned" },
+  { path: "Assignments/HW2/AlsulaimanF_HW2.pdf",    desc: "HW2 write-up — Heart Health Imaging System implementation and class diagram", status: "done" },
+  { path: "Assignments/HW2/HeartHealthImagingSystem/", desc: "Java/JavaFX source — Patient Intake, CT Scan Tech, Patient View, Doctor View", status: "done" },
+  { path: "Assignments/HW2/HW2 Implementation Class Diagram.png", desc: "Post-implementation Astah class diagram for the Heart Health system", status: "done" },
   { path: "Assignments/HW3/",                       desc: "Homework 3 — Design pattern implementation in Java",                     status: "planned" },
   { path: "Assignments/HW4/",                       desc: "Homework 4 — Peer-reviewed assignment",                                  status: "planned" },
   { path: "project/README.md",                      desc: "Project overview, problem statement, and team information",               status: "planned" },
@@ -64,6 +66,25 @@ const assignments = [
       { label: "Department.java",     icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Department.java", type: "github" },
       { label: "Gradable.java",       icon: "☕", url: "https://github.com/jumperpc3000/cse460-software-analysis-design/blob/main/Assignments/HW1/Exported%20Astah%20java%20/Gradable.java",   type: "github" },
     ]
+  },
+  {
+    id: "hw2",
+    number: "HW2",
+    title: "Heart Health Imaging and Recording System",
+    status: "done",
+    skills: ["Java", "JavaFX", "GUI Design", "OOP", "UML Class Diagram", "Astah", "File I/O", "Role-Based Access"],
+    summary: "Implemented the Heart Health Imaging and Recording System as a Java/JavaFX GUI application based on the Module 1 case study. Supports four user roles — Receptionist, CT Scan Technician, Patient, and Heart Specialist — with role-based access control, text-file persistence, and a full clinical workflow from patient intake through CT scan entry to risk assessment and patient communication.",
+    problems: [
+      { num: "Item 1", title: "Working Code",       desc: "Full JavaFX implementation covering Patient Intake, CT Scan Tech, Patient View, and Doctor View functionality with file-backed persistence." },
+      { num: "Item 2", title: "Demo Video",          desc: "Video walkthrough showing compilation, all four functional areas, and live data written to text files." },
+      { num: "Item 3", title: "Final Class Diagram", desc: "Post-implementation Astah class diagram reflecting all packages, classes, fields, methods, and relationships of the delivered system." },
+    ],
+    deliverables: [
+      { label: "Write-up PDF",    icon: "📄", url: "Assignments/HW2/AlsulaimanF_HW2.pdf",                                                                                         type: "pdf"     },
+      { label: "Source Code",     icon: "☕", url: "PLACEHOLDER_GITHUB_REPO_LINK",                                                                                                  type: "github"  },
+      { label: "Demo Video",      icon: "▶",  url: "PLACEHOLDER_DEMO_VIDEO_LINK",                                                                                                   type: "github"  },
+      { label: "Class Diagram",   icon: "◈",  url: "Assignments/HW2/HW2%20Implementation%20Class%20Diagram.png",                                                                    type: "diagram" },
+    ]
   }
 ];
 
@@ -113,13 +134,18 @@ function renderAssignments() {
         <div class="hw-deliverables">
           <div class="hw-sub-label">Deliverables</div>
           <div class="deliverables-grid">
-            ${hw.deliverables.map(d => `
-              <a href="${d.url}" target="_blank" rel="noopener noreferrer" class="deliverable-chip deliverable-${d.type}">
-                <span class="deliverable-icon">${d.icon}</span>
-                <span class="deliverable-label">${d.label}</span>
-                <span class="deliverable-arrow">↗</span>
-              </a>
-            `).join('')}
+            ${hw.deliverables.map(d => d.type === 'diagram'
+              ? `<button onclick="openDiagram('${d.url}')" class="deliverable-chip deliverable-diagram">
+                   <span class="deliverable-icon">${d.icon}</span>
+                   <span class="deliverable-label">${d.label}</span>
+                   <span class="deliverable-arrow">⤢</span>
+                 </button>`
+              : `<a href="${d.url}" target="_blank" rel="noopener noreferrer" class="deliverable-chip deliverable-${d.type}">
+                   <span class="deliverable-icon">${d.icon}</span>
+                   <span class="deliverable-label">${d.label}</span>
+                   <span class="deliverable-arrow">↗</span>
+                 </a>`
+            ).join('')}
           </div>
         </div>
 
@@ -249,4 +275,86 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll("section.container").forEach(el => {
   el.style.animationPlayState = "paused";
   observer.observe(el);
+});
+
+// ── DIAGRAM LIGHTBOX ─────────────────────────────────────────
+let _dScale = 1, _dTx = 0, _dTy = 0, _dDragging = false, _dLx = 0, _dLy = 0;
+
+function openDiagram(src) {
+  const modal = document.getElementById('diagramModal');
+  const img   = document.getElementById('diagramImg');
+  _dScale = 1; _dTx = 0; _dTy = 0;
+  img.src = '';
+  img.onload = () => _fitDiagram();
+  img.src = src;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDiagram() {
+  document.getElementById('diagramModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function _fitDiagram() {
+  const modal = document.getElementById('diagramModal');
+  const img   = document.getElementById('diagramImg');
+  _dScale = Math.min(modal.clientWidth / img.naturalWidth, modal.clientHeight / img.naturalHeight) * 0.94;
+  _dTx = (modal.clientWidth  - img.naturalWidth  * _dScale) / 2;
+  _dTy = (modal.clientHeight - img.naturalHeight * _dScale) / 2;
+  _applyDiagram();
+}
+
+function _applyDiagram() {
+  const img = document.getElementById('diagramImg');
+  img.style.transform = `translate(${_dTx}px, ${_dTy}px) scale(${_dScale})`;
+}
+
+function _diagramZoom(delta, cx, cy) {
+  const factor = delta > 0 ? 1.15 : 1 / 1.15;
+  const next   = Math.min(Math.max(_dScale * factor, 0.1), 10);
+  const ratio  = next / _dScale;
+  _dTx = cx - ratio * (cx - _dTx);
+  _dTy = cy - ratio * (cy - _dTy);
+  _dScale = next;
+  _applyDiagram();
+}
+
+window.addEventListener('load', () => {
+  const inner = document.getElementById('diagramInner');
+  if (!inner) return;
+
+  // Scroll-to-zoom
+  inner.addEventListener('wheel', e => {
+    e.preventDefault();
+    const r = inner.getBoundingClientRect();
+    _diagramZoom(-e.deltaY, e.clientX - r.left, e.clientY - r.top);
+  }, { passive: false });
+
+  // Drag-to-pan
+  inner.addEventListener('mousedown', e => {
+    if (e.button !== 0) return;
+    _dDragging = true; _dLx = e.clientX; _dLy = e.clientY;
+    inner.classList.add('grabbing');
+  });
+  window.addEventListener('mousemove', e => {
+    if (!_dDragging) return;
+    _dTx += e.clientX - _dLx; _dTy += e.clientY - _dLy;
+    _dLx = e.clientX; _dLy = e.clientY;
+    _applyDiagram();
+  });
+  window.addEventListener('mouseup', () => {
+    _dDragging = false;
+    document.getElementById('diagramInner')?.classList.remove('grabbing');
+  });
+
+  // Close on backdrop click
+  document.getElementById('diagramModal')?.addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeDiagram();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeDiagram();
+  });
 });

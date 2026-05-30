@@ -1037,3 +1037,96 @@ footer {
 .deliverable-icon { font-size: 0.9rem; }
 .deliverable-arrow { opacity: 0.6; font-size: 0.7rem; }
 
+/* Diagram deliverable chip — purple accent, button reset */
+.deliverable-diagram {
+  border-color: rgba(167,139,250,0.25);
+  color: #a78bfa;
+  background: rgba(167,139,250,0.06);
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+}
+.deliverable-diagram:hover { background: rgba(167,139,250,0.14); border-color: rgba(167,139,250,0.45); transform: translateY(-1px); }
+
+/* ── Diagram lightbox ─────────────────────────────────────── */
+.diagram-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.92);
+  align-items: center;
+  justify-content: center;
+}
+.diagram-modal.open { display: flex; }
+
+#diagramInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+#diagramInner.grabbing { cursor: grabbing; }
+
+#diagramImg {
+  position: absolute;
+  top: 0; left: 0;
+  transform-origin: 0 0;
+  user-select: none;
+  -webkit-user-drag: none;
+  max-width: none;
+}
+
+.diagram-modal-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 2001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.2rem;
+  background: rgba(10,10,15,0.75);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  pointer-events: none;
+}
+.diagram-modal-bar > * { pointer-events: all; }
+
+.diagram-modal-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.04em;
+}
+
+.diagram-modal-actions { display: flex; gap: 0.5rem; }
+
+.diagram-ctrl-btn {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.75);
+  border-radius: 6px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: 'DM Mono', monospace;
+}
+.diagram-ctrl-btn:hover { background: rgba(255,255,255,0.14); }
+
+.diagram-hint {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2001;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.28);
+  pointer-events: none;
+  letter-spacing: 0.03em;
+}
+

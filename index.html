@@ -214,7 +214,7 @@
           <div class="t-content">
             <span class="t-phase">Phase 2</span>
             <h3>Homeworks &amp; Quizzes</h3>
-            <p>HW1 complete — Astah, UML class diagrams, OOP design, plugin usage.</p>
+            <p>HW1 complete — Astah, UML class diagrams, OOP design, plugin usage. HW2 complete — Heart Health Imaging System in Java/JavaFX with role-based access, full clinical workflow, and post-implementation class diagram.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -245,6 +245,23 @@
     </section>
 
   </main>
+
+  <!-- ── Diagram lightbox modal ──────────────────────────── -->
+  <div id="diagramModal" class="diagram-modal" role="dialog" aria-modal="true" aria-label="Class diagram viewer">
+    <div class="diagram-modal-bar">
+      <span class="diagram-modal-title">◈ HW2 — Implementation Class Diagram &nbsp;·&nbsp; scroll to zoom · drag to pan</span>
+      <div class="diagram-modal-actions">
+        <button class="diagram-ctrl-btn" onclick="_fitDiagram()" title="Reset zoom">⊡ Fit</button>
+        <button class="diagram-ctrl-btn" onclick="_diagramZoom(1, window.innerWidth/2, window.innerHeight/2)" title="Zoom in">+</button>
+        <button class="diagram-ctrl-btn" onclick="_diagramZoom(-1, window.innerWidth/2, window.innerHeight/2)" title="Zoom out">−</button>
+        <button class="diagram-ctrl-btn" onclick="closeDiagram()" title="Close (Esc)">✕ Close</button>
+      </div>
+    </div>
+    <div id="diagramInner">
+      <img id="diagramImg" src="" alt="HW2 Implementation Class Diagram" draggable="false" />
+    </div>
+    <span class="diagram-hint">scroll to zoom · drag to pan · Esc to close</span>
+  </div>
 
   <footer>
     <div class="footer-inner">
